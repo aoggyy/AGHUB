@@ -1,7 +1,7 @@
 rconsoleprint("ExecuteAGHUB")
-     wait(2)
+     wait(3)
  rconsoleprint(" PleaseWait...")
-     wait(1)
+     wait(3)
 ---ui---
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("AGHUB", "BloodTheme")
@@ -17,6 +17,7 @@ Section:NewButton("ResetWalkSpeed", "JustResetWalkSpeed", function()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 end)
 ---Jump---
+local Section = Tab:NewSection("JumpPower")
 Section:NewSlider("JumpPower", "Slide to set your JumpPower", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
@@ -24,5 +25,20 @@ end)
 Section:NewButton("ResetJumpPower", "JustResetJumpPower", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
----ctrl hide---
-local Tab = Window:NewTab("(กูยังไม่ได้เขียนสคริป)HideGui")
+---ResetCharacter---
+local Section = Tab:NewSection("ResetCharacter")
+Section:NewButton("ClickToResetCharacter", "JustResetCharacter", function()
+    wait(0.5)
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+---ctrlHideUi---
+local Tab = Window:NewTab("HideGui")
+local Section = Tab:NewSection("CtrlHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
+---Teleport---
+local Tab = Window:NewTab("Teleport")
+local Section = Tab:NewSection("GetCFrame")
+
+Section:NewButton("ClickToExecute", "GetCFrame", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/aoggyy/AGHUB/main/GetCFrame"))()
+end)
+local Section = Tab:NewSection("MoregameLater")
