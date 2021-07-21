@@ -1,3 +1,8 @@
+rconsoleprint("ExecuteAGHUB")
+     wait(3)
+ rconsoleprint(" PleaseWait")
+     wait(3)
+---ui---
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("AGHUB", "BloodTheme")
 ---Character---
@@ -20,5 +25,4 @@ Section:NewButton("ResetJumpPower", "JustResetJumpPower", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
 ---ctrl hide---
-local Tab = Window:NewTab("HideGui")
-local Section = Tab:NewSection("ไม่ต้องกดกูยังไม่ได้ทำสคริป")
+local Tab = Window:NewTab("(กูยังไม่ได้เขียนสคริป)HideGui")
