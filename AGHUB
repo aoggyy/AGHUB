@@ -38,7 +38,16 @@ local Section = Tab:NewSection("GetCFrame")
 Section:NewButton("ClickToExecute", "GetCFrame", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/aoggyy/AGHUB/main/GetCFrame"))()
 end)
-local Section = Tab:NewSection("MoregameLater")
+
+local Section = Tab:NewSection("IslandBloxFruits")
+---JungleTP---
+Section:NewButton("Jungle", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1504.4803466797, 47.887054443359, -78.06356048584)
+end)
+---MiddleTownTP---
+Section:NewButton("MiddleTown", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-851.44720458984, 7.6872386932373, 1483.1424560547)
+end)
 ---ctrlHideUi---
 local Tab = Window:NewTab("HideGui")
 local Section = Tab:NewSection("RightCtrlHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
