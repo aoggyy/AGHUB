@@ -1,5 +1,5 @@
 rconsoleprint("ExecuteAGHUB")
-     wait(3)
+     wait(0.5)
  rconsoleprint(" PleaseWait...")
      wait(3)
 ---ui---
