@@ -31,9 +31,6 @@ Section:NewButton("ClickToResetCharacter", "JustResetCharacter", function()
     wait(0.5)
     game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
----ctrlHideUi---
-local Tab = Window:NewTab("HideGui")
-local Section = Tab:NewSection("CtrlHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
 ---Teleport---
 local Tab = Window:NewTab("Teleport")
 local Section = Tab:NewSection("GetCFrame")
@@ -42,3 +39,6 @@ Section:NewButton("ClickToExecute", "GetCFrame", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/aoggyy/AGHUB/main/GetCFrame"))()
 end)
 local Section = Tab:NewSection("MoregameLater")
+---ctrlHideUi---
+local Tab = Window:NewTab("HideGui")
+local Section = Tab:NewSection("RightCtrlHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
