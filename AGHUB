@@ -1,7 +1,7 @@
 rconsoleprint("ExecuteAGHUB")
-     wait(3)
- rconsoleprint(" PleaseWait")
-     wait(3)
+     wait(2)
+ rconsoleprint(" PleaseWait...")
+     wait(1)
 ---ui---
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("AGHUB", "BloodTheme")
