@@ -1,3 +1,4 @@
+ local LEVEL = game.Players.LocalPlayer.Data.Level.Value
 if LEVEL == 1 or LEVEL <= 9 then
 local args = {
     [1] = "StartQuest",
@@ -151,7 +152,7 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-elseif LEVEL == 400 or LEVEL 450 then
+elseif LEVEL == 400 or LEVEL <= 450 then
 local args = {
     [1] = "StartQuest",
     [2] = "FishmanQuest",
@@ -160,7 +161,7 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-elseif LEVEL 450 or LEVEl <= 475 then
+elseif LEVEL == 450 or LEVEL <= 475 then
 local args = {
     [1] = "StartQuest",
     [2] = "SkyExp1Quest",
@@ -169,7 +170,7 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-elseif LEVEL 475 or LEVEL <= 625 then
+elseif LEVEL == 475 or LEVEL <= 625 then
 local args = {
     [1] = "StartQuest",
     [2] = "SkyExp1Quest",
@@ -178,7 +179,7 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-elseif LEVEL 625 or LeVEL <= 650 then
+elseif LEVEL == 625 or LeVEL <= 650 then
 local args = {
     [1] = "StartQuest",
     [2] = "FountainQuest",
@@ -187,7 +188,7 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-elseif LEVEL 650 or LEVEL <= 676
+elseif LEVEL == 650 or LEVEL <= 676 then
 local args = {
     [1] = "StartQuest",
     [2] = "FountainQuest",
