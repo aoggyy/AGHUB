@@ -5,6 +5,215 @@ rconsoleprint("ExecuteAGHUB")
 ---ui---
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("AGHUB", "BloodTheme")
+---Main---
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("AutoFarm")
+---AutoQuest---
+Section:NewToggle("AutoQuest", "AutoQuestตามLVL", function(state)
+    if state then
+ local LEVEL = game.Players.LocalPlayer.Data.Level.Value
+if LEVEL == 1 or LEVEL <= 9 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "BanditQuest1",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 10 or LEVEL <= 15 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "JungleQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 15 or LEVEL <= 30 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "JungleQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 30 or LEVEL <= 40 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "BuggyQuest1",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 40 or LEVEL <= 60 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "BuggyQuest1",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 60 or LEVEL <= 75 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "DesertQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 75 or LEVEL <= 90 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "DesertQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 90 or LEVEL <= 100 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "SnowQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 100 or LEVEL <= 150 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "SnowQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 150 or LEVEL <= 175 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "SkyQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 175 or LEVEL <= 185 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "SkyQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 185 or LEVEL <= 225 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "MarineQuest2",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 225 or LEVEL <= 275 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "ColosseumQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 275 or LEVEL <= 300 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "ColosseumQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 300 or LEVEL <= 330 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "MagmaQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 330 or LEVEL <= 375 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "MagmaQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 375 or LEVEL <= 400 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "FishmanQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 400 or LEVEL <= 450 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "FishmanQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 450 or LEVEL <= 475 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "SkyExp1Quest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 475 or LEVEL <= 625 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "SkyExp1Quest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 625 or LeVEL <= 650 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "FountainQuest",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+elseif LEVEL == 650 or LEVEL <= 676 then
+local args = {
+    [1] = "StartQuest",
+    [2] = "FountainQuest",
+    [3] = 2
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end
+ else
+        print("Toggle Off")
+    end
+end)
 ---Character---
 local Tab = Window:NewTab("Character")
 local Section = Tab:NewSection("WalkSpeed")
@@ -35,6 +244,11 @@ end)
 local Tab = Window:NewTab("Teleport")
 local Section = Tab:NewSection("IslandTeleportBF")
 
+---WindMillTP---
+Section:NewButton("WindMill", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1144.9758300781, 16.359743118286, 1329.4919433594)
+end)
+
 ---JungleTP---
 Section:NewButton("Jungle", "ClickToTP", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1504.4803466797, 47.887054443359, -78.06356048584)
@@ -45,6 +259,69 @@ Section:NewButton("MiddleTown", "ClickToTP", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-851.44720458984, 7.6872386932373, 1483.1424560547)
 end)
 
+---PirateVillage---
+Section:NewButton("PirateVillage", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1157.2733154297, 32.596988677979, 4124.8212890625)
+end)
+ 
+ ---Desert---
+ Section:NewButton("Desert", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1217.1528320313, 6.4735026359558, 4237.3266601563)
+end)
+
+---FrozenVillage---
+ Section:NewButton("FrozenVillage", "ClickToTP", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1256.1680908203, 45.359600067139, -1226.6164550781)
+end)
+
+---Colosseum---
+ Section:NewButton("Colosseum", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1428.3547363281, 7.4243764877319, -3014.373046875)
+end)
+
+---SkyIsland1stFloor---
+ Section:NewButton("SkyIsland1stFloor", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4691.3110351563, 717.68145751953, -2630.49609375)
+end)
+
+---SkyIsland2ndFloor---
+ Section:NewButton("SkyIsland2ndFloor", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4839.4169921875, 850.13720703125, -1840.1959228516)
+end)
+
+---SkyIsland3rdFloor---
+Section:NewButton("SkyIsland3rdFloor", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8021.62109375, 5564.328125, -350.09893798828)
+end)
+
+---Prison---
+Section:NewButton("Prison", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4850.712890625, 5.686728477478, 726.03198242188)
+end)
+
+---MagmaVillage---
+Section:NewButton("MagmaVilage", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5265.3540039063, 26.195816040039, 8612.2587890625)
+end)
+
+---UnderWaterCity---
+Section:NewButton("UnderWaterCity", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61379.265625, 7.0000472068787, 1711.3155517578)
+end)
+
+---FountainCity---
+Section:NewButton("FountainCity", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5149.96875, 4.5363273620605, 3992.1625976563)
+end)
+
+---ShankRoom---
+Section:NewButton("ShankRoom", "ClickToTP", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1437.5698242188, 29.88703918457, -10.984558105469)
+end)
+
 ---ctrlHideUi---
 local Tab = Window:NewTab("HideGui")
-local Section = Tab:NewSection("RightCtrlHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
+local Section = Tab:NewSection("SelectYourKeyBindToHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	print("You just clicked the bind")
+end)
