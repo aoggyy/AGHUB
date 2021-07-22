@@ -372,6 +372,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
 
 end
     else
@@ -384,6 +385,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
         end
 end
 end)
@@ -399,6 +401,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
         end
     else
      _G.AUTOSTAT = false
@@ -410,6 +413,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
         end
     end
 end)
@@ -425,6 +429,7 @@ while _G.AUTOSTAT do
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
 end
     else
     _G.AUTOSTAT = false
@@ -436,7 +441,7 @@ while _G.AUTOSTAT do
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
+wait()
 end
     end
 end)
@@ -452,7 +457,7 @@ while _G.AUTOSTAT do
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
+wait()
 end
     else
 _G.AUTOSTAT = false
@@ -464,6 +469,7 @@ while _G.AUTOSTAT do
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
 
 end
     end
