@@ -214,6 +214,16 @@ end
         print("Toggle Off")
     end
 end)
+---KillAura---
+local Section = Tab:NewSection("KillAura")
+Section:NewButton("KillAura", "JustKillAura", function()
+    local a = game:GetService("Workspace").Enemies:GetChildren()
+for i,v in pairs(a) do
+    v.Humanoid.Health = 0
+    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+    v.HumanoidRootPart.Transparency = 0.5
+end
+    end)
 ---Character---
 local Tab = Window:NewTab("Character")
 local Section = Tab:NewSection("WalkSpeed")
@@ -319,6 +329,147 @@ Section:NewButton("ShankRoom", "ClickToTP", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1437.5698242188, 29.88703918457, -10.984558105469)
 end)
 
+---AutoStat---
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("AutoStat")
+---Melee---
+Section:NewToggle("Melee", "AutoStatMelee", function(state)
+    if state then
+        _G.AutoStat = true
+while _G.AutoStat do
+local args = {
+    [1] = "AddPoint",
+    [2] = "Melee",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
+end
+    else
+       _G.AutoStat = false
+while _G.AutoStat do
+local args = {
+    [1] = "AddPoint",
+    [2] = "Melee",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait()
+end
+    end
+end)
+---Defense---
+Section:NewToggle("Defense", "AutoStatDefense", function(state)
+    if state then
+        _G.AUTOSTAT = true
+        while _G.AUTOSTAT do
+local args = {
+    [1] = "AddPoint",
+    [2] = "Defense",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+end
+    else
+    _G.AUTOSTAT = false
+        while _G.AUTOSTAT do
+local args = {
+    [1] = "AddPoint",
+    [2] = "Defense",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+end
+end)
+---Sword---
+Section:NewToggle("Sword", "AutoStatSword", function(state)
+    if state then
+        _G.AUTOSTAT = true
+        while _G.AUTOSTAT do
+local args = {
+    [1] = "AddPoint",
+    [2] = "Sword",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+    else
+     _G.AUTOSTAT = false
+        while _G.AUTOSTAT do
+local args = {
+    [1] = "AddPoint",
+    [2] = "Sword",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+    end
+end)
+---Gun---
+Section:NewToggle("Gun", "AutoStatGun", function(state)
+    if state then
+_G.AUTOSTAT = true
+while _G.AUTOSTAT do
+        local args = {
+    [1] = "AddPoint",
+    [2] = "Demon Fruit",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end
+    else
+    _G.AUTOSTAT = false
+while _G.AUTOSTAT do
+       local args = {
+    [1] = "AddPoint",
+    [2] = "Demon Fruit",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+end
+    end
+end)
+---DemonFruit---
+Section:NewToggle("DemonFruit", "AutoStatDemonFruit", function(state)
+    if state then
+_G.AUTOSTAT = true
+while _G.AUTOSTAT do
+       local args = {
+    [1] = "AddPoint",
+    [2] = "Demon Fruit",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+end
+    else
+_G.AUTOSTAT = false
+while _G.AUTOSTAT do
+    local args = {
+    [1] = "AddPoint",
+    [2] = "Demon Fruit",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+end
+    end
+end)
+---OpenInventory---
+local Section = Tab:NewSection("OpenInventory")
 ---ctrlHideUi---
 local Tab = Window:NewTab("HideGui")
 local Section = Tab:NewSection("SelectYourKeyBindToHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
