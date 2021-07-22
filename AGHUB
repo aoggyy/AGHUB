@@ -420,7 +420,7 @@ _G.AUTOSTAT = true
 while _G.AUTOSTAT do
         local args = {
     [1] = "AddPoint",
-    [2] = "Demon Fruit",
+    [2] = "Gun",
     [3] = 1
 }
 
@@ -431,7 +431,7 @@ end
 while _G.AUTOSTAT do
        local args = {
     [1] = "AddPoint",
-    [2] = "Demon Fruit",
+    [2] = "Gun",
     [3] = 1
 }
 
