@@ -8,211 +8,275 @@ local Window = Library.CreateLib("AGHUB", "BloodTheme")
 ---Main---
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("AutoFarm")
----AutoQuest---
-Section:NewToggle("AutoQuest", "AutoQuestตามLVL", function(state)
-    if state then
- local LEVEL = game.Players.LocalPlayer.Data.Level.Value
-if LEVEL == 1 or LEVEL <= 9 then
+---AutoFarm,Questปิด---
+Section:NewButton("AutoFarm-On", "AutoFarmเปิด", function()
+    _G.FARM = true
+while _G.FARM do
+    local LEVEL = game:GetService("Players").LocalPlayer.Data.Level.Value
+    if LEVEL == 1 or LEVEL <= 9 then 
+    print("Quest1")
+    Q = "BanditQuest1"
+    QN = 1 
+    QC = CFrame.new(1060.7957763672, 16.516616821289, 1546.5426025391)
+    QMON = "Bandit [Lv.5]"
+   elseif LEVEL == 10 or LEVEL <= 14 then 
+    print("Quest2")
+    Q = "JungleQuest"
+    QN = 1
+    QC = CFrame.new(-1603.8524169922, 36.85213470459, 152.76983642578)
+    QMON = "Monkey [Lv. 14]"
+    elseif LEVEL == 15 or LEVEL <= 29 then
+    Q = "JungleQuest"
+    QN = 2
+    QC = CFrame.new(-1603.8524169922, 36.85213470459, 152.76983642578)
+    QMON = "Gorilla [Lv. 20]"
+    elseif LEVEL == 30 or LEVEL <= 39 then
+    Q = "BuggyQuest1"
+    QN = 1 
+    QC = CFrame.new(-1139.35546875, 4.752049446106, 3827.5021972656)
+    QMON = "Pirate [Lv. 35]"
+    elseif LEVEL == 40 or LEVEL <= 59 then
+    Q = "BuggyQuest1"
+    QN = 2 
+    QC = CFrame.new(-1139.35546875, 4.752049446106, 3827.5021972656)
+    QMON = "Brute [Lv. 45]"
+    elseif LEVEL == 60 or LEVEL <= 74 then
+    Q = "DesertQuest"
+    QN = 1 
+    QC = CFrame.new(897.37786865234, 6.4438004493713, 4387.2045898438)
+    QMON = "Desert Bandit [Lv. 60]"
+    elseif LEVEL == 75 or LEVEL <= 89 then 
+    Q = "DesertQuest"
+    QN = 2 
+    QC = CFrame.new(897.37786865234, 6.4438004493713, 4387.2045898438)
+    QMON = "Desert Officer [Lv. 70]"
+    elseif LEVEL == 89 or LEVEL <= 99 then 
+    Q = "SnowQuest"
+    QN = 1 
+    QC = CFrame.new(1384.4965820313, 87.272789001465, -1298.8634033203)
+    QMON = "Snow Bandit [Lv. 90]"
+    elseif LEVEL == 100 or LEVEL <= 119 then 
+    Q = "SnowQuest"
+    QN = 2 
+    QC = CFrame.new(1384.4965820313, 87.272789001465, -1298.8634033203)
+    QMON = "Snowman [Lv. 100]"
+    elseif LEVEL == 120 or LEVEL <= 149 then 
+    Q = "MarineQuest2"
+    QN = 1 
+    QC = CFrame.new(-5035.1591796875, 28.652034759521, 4325.3740234375)
+    QMON = "Chief Petty Officer [Lv. 120]"
+    elseif LEVEL == 150 or LEVEL <= 174 then 
+    Q = "SkyQuest"
+    QN = 1 
+    QC = CFrame.new(-4842.0595703125, 717.66961669922, -2623.916015625)
+    QMON = "Sky Bandit [Lv. 150]"
+    elseif LEVEL == 175 or LEVEL <= 225 then 
+    Q = "SkyQuest"
+    QN = 2 
+    QC = CFrame.new(-4842.0595703125, 717.66961669922, -2623.916015625)
+    QMON = "Dark Master [Lv. 175]"
+    elseif LEVEL == 226 or LEVEL <= 274 then 
+    Q = "ColosseumQuest"
+    QN = 1 
+    QC = CFrame.new(-1577.7658691406, 7.3893365859985, -2985.2048339844)
+    QMON = "Toga Warrior [Lv. 225]"
+    elseif LEVEL == 275 or LEVEL <= 300 then
+    Q = "ColosseumQuest"
+    QN = 2 
+    QC = CFrame.new(-1577.7658691406, 7.3893365859985, -2985.2048339844)
+    QMON = "Gladiator [Lv. 275]"
+    elseif LEVEL == 301 or LEVEL <= 329 then
+    Q = "MagmaQuest"
+    QN = 1 
+    QC = CFrame.new(-5315.751953125, 12.236963272095, 8513.0986328125)
+    QMON = "Military Soldier [Lv. 300]"
+    elseif LEVEL == 330 or LEVEL <= 374 then 
+    Q = "MagmaQuest"
+    QN = 2 
+    QC = CFrame.new(-5315.751953125, 12.236963272095, 8513.0986328125)
+    QMON = "Military Spy [Lv. 330]"
+    elseif LEVEL == 375 or LEVEL <= 399 then 
+    Q = "FishmanQuest"
+    QN = 1 
+    QC = CFrame.new(61121.3125, 18.47163772583, 1568.0963134766)
+    QMON = "Fishman Warrior [Lv. 375]"
+    elseif LEVEL == 400 or LEVEL <= 449 then 
+    Q = "FishmanQuest"
+    QN = 2 
+    QC = CFrame.new(61121.3125, 18.47163772583, 1568.0963134766)
+    QMON = "Fishman Commando [Lv. 400]"
+    elseif LEVEL == 450 or LEVEL <= 474 then 
+    Q = "SkyExp1Quest"
+    QN = 1 
+    QC = CFrame.new(-4722.7724609375, 845.27716064453, -1953.5568847656)
+    QMON = "God's Guard [Lv. 450]"
+    elseif LEVEL == 475 or LEVEL <= 624 then 
+    Q = "SkyExp1Quest"
+    QN = 2 
+    QC = CFrame.new(-7861.5307617188, 5545.4931640625, -380.16348266602)
+    QMON = "Shanda [Lv. 475]"
+    end
+
+    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+        ---nothing---
+    else
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = QC
 local args = {
     [1] = "StartQuest",
-    [2] = "BanditQuest1",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 10 or LEVEL <= 15 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "JungleQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 15 or LEVEL <= 30 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "JungleQuest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 30 or LEVEL <= 40 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "BuggyQuest1",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 40 or LEVEL <= 60 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "BuggyQuest1",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 60 or LEVEL <= 75 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "DesertQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 75 or LEVEL <= 90 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "DesertQuest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 90 or LEVEL <= 100 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "SnowQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 100 or LEVEL <= 150 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "SnowQuest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 150 or LEVEL <= 175 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "SkyQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 175 or LEVEL <= 185 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "SkyQuest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 185 or LEVEL <= 225 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "MarineQuest2",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 225 or LEVEL <= 275 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "ColosseumQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 275 or LEVEL <= 300 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "ColosseumQuest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 300 or LEVEL <= 330 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "MagmaQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 330 or LEVEL <= 375 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "MagmaQuest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 375 or LEVEL <= 400 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "FishmanQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 400 or LEVEL <= 450 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "FishmanQuest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 450 or LEVEL <= 475 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "SkyExp1Quest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 475 or LEVEL <= 625 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "SkyExp1Quest",
-    [3] = 2
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 625 or LeVEL <= 650 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "FountainQuest",
-    [3] = 1
-}
-
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-elseif LEVEL == 650 or LEVEL <= 676 then
-local args = {
-    [1] = "StartQuest",
-    [2] = "FountainQuest",
-    [3] = 2
+    [2] = Q,
+    [3] = QN
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end
- else
-        print("Toggle Off")
+for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+    if v.Humanoid.Health == 0 then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = QC
+    elseif v.Name == QMON then
+        v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+        v.HumanoidRootPart.Transparency = 0.5
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,20)
+        end
+end
+wait()
+game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':Button1Down(Vector2.new(31, 123))
+end
+end)
+---AutoFarm,Questปิด---
+Section:NewButton("AutoFarm-Off", "AutoFarmปิด", function()
+    _G.FARM = false
+while _G.FARM do
+    local LEVEL = game:GetService("Players").LocalPlayer.Data.Level.Value
+    if LEVEL == 1 or LEVEL <= 9 then 
+    print("Quest1")
+    Q = "BanditQuest1"
+    QN = 1 
+    QC = CFrame.new(1060.7957763672, 16.516616821289, 1546.5426025391)
+    QMON = "Bandit [Lv.5]"
+   elseif LEVEL == 10 or LEVEL <= 14 then 
+    print("Quest2")
+    Q = "JungleQuest"
+    QN = 1
+    QC = CFrame.new(-1603.8524169922, 36.85213470459, 152.76983642578)
+    QMON = "Monkey [Lv. 14]"
+    elseif LEVEL == 15 or LEVEL <= 29 then
+    Q = "JungleQuest"
+    QN = 2
+    QC = CFrame.new(-1603.8524169922, 36.85213470459, 152.76983642578)
+    QMON = "Gorilla [Lv. 20]"
+    elseif LEVEL == 30 or LEVEL <= 39 then
+    Q = "BuggyQuest1"
+    QN = 1 
+    QC = CFrame.new(-1139.35546875, 4.752049446106, 3827.5021972656)
+    QMON = "Pirate [Lv. 35]"
+    elseif LEVEL == 40 or LEVEL <= 59 then
+    Q = "BuggyQuest1"
+    QN = 2 
+    QC = CFrame.new(-1139.35546875, 4.752049446106, 3827.5021972656)
+    QMON = "Brute [Lv. 45]"
+    elseif LEVEL == 60 or LEVEL <= 74 then
+    Q = "DesertQuest"
+    QN = 1 
+    QC = CFrame.new(897.37786865234, 6.4438004493713, 4387.2045898438)
+    QMON = "Desert Bandit [Lv. 60]"
+    elseif LEVEL == 75 or LEVEL <= 89 then 
+    Q = "DesertQuest"
+    QN = 2 
+    QC = CFrame.new(897.37786865234, 6.4438004493713, 4387.2045898438)
+    QMON = "Desert Officer [Lv. 70]"
+    elseif LEVEL == 89 or LEVEL <= 99 then 
+    Q = "SnowQuest"
+    QN = 1 
+    QC = CFrame.new(1384.4965820313, 87.272789001465, -1298.8634033203)
+    QMON = "Snow Bandit [Lv. 90]"
+    elseif LEVEL == 100 or LEVEL <= 119 then 
+    Q = "SnowQuest"
+    QN = 2 
+    QC = CFrame.new(1384.4965820313, 87.272789001465, -1298.8634033203)
+    QMON = "Snowman [Lv. 100]"
+    elseif LEVEL == 120 or LEVEL <= 149 then 
+    Q = "MarineQuest2"
+    QN = 1 
+    QC = CFrame.new(-5035.1591796875, 28.652034759521, 4325.3740234375)
+    QMON = "Chief Petty Officer [Lv. 120]"
+    elseif LEVEL == 150 or LEVEL <= 174 then 
+    Q = "SkyQuest"
+    QN = 1 
+    QC = CFrame.new(-4842.0595703125, 717.66961669922, -2623.916015625)
+    QMON = "Sky Bandit [Lv. 150]"
+    elseif LEVEL == 175 or LEVEL <= 225 then 
+    Q = "SkyQuest"
+    QN = 2 
+    QC = CFrame.new(-4842.0595703125, 717.66961669922, -2623.916015625)
+    QMON = "Dark Master [Lv. 175]"
+    elseif LEVEL == 226 or LEVEL <= 274 then 
+    Q = "ColosseumQuest"
+    QN = 1 
+    QC = CFrame.new(-1577.7658691406, 7.3893365859985, -2985.2048339844)
+    QMON = "Toga Warrior [Lv. 225]"
+    elseif LEVEL == 275 or LEVEL <= 300 then
+    Q = "ColosseumQuest"
+    QN = 2 
+    QC = CFrame.new(-1577.7658691406, 7.3893365859985, -2985.2048339844)
+    QMON = "Gladiator [Lv. 275]"
+    elseif LEVEL == 301 or LEVEL <= 329 then
+    Q = "MagmaQuest"
+    QN = 1 
+    QC = CFrame.new(-5315.751953125, 12.236963272095, 8513.0986328125)
+    QMON = "Military Soldier [Lv. 300]"
+    elseif LEVEL == 330 or LEVEL <= 374 then 
+    Q = "MagmaQuest"
+    QN = 2 
+    QC = CFrame.new(-5315.751953125, 12.236963272095, 8513.0986328125)
+    QMON = "Military Spy [Lv. 330]"
+    elseif LEVEL == 375 or LEVEL <= 399 then 
+    Q = "FishmanQuest"
+    QN = 1 
+    QC = CFrame.new(61121.3125, 18.47163772583, 1568.0963134766)
+    QMON = "Fishman Warrior [Lv. 375]"
+    elseif LEVEL == 400 or LEVEL <= 449 then 
+    Q = "FishmanQuest"
+    QN = 2 
+    QC = CFrame.new(61121.3125, 18.47163772583, 1568.0963134766)
+    QMON = "Fishman Commando [Lv. 400]"
+    elseif LEVEL == 450 or LEVEL <= 474 then 
+    Q = "SkyExp1Quest"
+    QN = 1 
+    QC = CFrame.new(-4722.7724609375, 845.27716064453, -1953.5568847656)
+    QMON = "God's Guard [Lv. 450]"
+    elseif LEVEL == 475 or LEVEL <= 624 then 
+    Q = "SkyExp1Quest"
+    QN = 2 
+    QC = CFrame.new(-7861.5307617188, 5545.4931640625, -380.16348266602)
+    QMON = "Shanda [Lv. 475]"
     end
+
+    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+        ---nothing---
+    else
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = QC
+local args = {
+    [1] = "StartQuest",
+    [2] = Q,
+    [3] = QN
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end
+for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+    if v.Humanoid.Health == 0 then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = QC
+    elseif v.Name == QMON then
+        v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+        v.HumanoidRootPart.Transparency = 0.5
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,20)
+        end
+end
+wait()
+game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':Button1Down(Vector2.new(31, 123))
+end
 end)
 ---KillAura---
 local Section = Tab:NewSection("KillAura")
@@ -267,6 +331,11 @@ end)
 ---MiddleTownTP---
 Section:NewButton("MiddleTown", "ClickToTP", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-851.44720458984, 7.6872386932373, 1483.1424560547)
+end)
+
+---MarinFord---
+Section:NewButton("MarinFord", "ClickToTP", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4997.1000976563, 63.38484954834, 4449.359375)
 end)
 
 ---PirateVillage---
@@ -474,11 +543,11 @@ wait()
 end
     end
 end)
----OpenInventory---
-local Section = Tab:NewSection("OpenInventory")
----ctrlHideUi---
-local Tab = Window:NewTab("HideGui")
-local Section = Tab:NewSection("SelectYourKeyBindToHideGuiไม่ต้องกดกูยังไม่ได้ทำ")
-Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
-	print("You just clicked the bind")
+---NoClip---
+local Section = Tab:NewSection("NoClip")
+Section:NewButton("NoClip", "ClickToNoClip", function()
+ _G.NoClip = true
+  if _G.NoClip then
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+  end
 end)
