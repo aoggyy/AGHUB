@@ -546,8 +546,5 @@ end)
 ---NoClip---
 local Section = Tab:NewSection("NoClip")
 Section:NewButton("NoClip", "ClickToNoClip", function()
- _G.NoClip = true
-  if _G.NoClip then
         game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-  end
 end)
